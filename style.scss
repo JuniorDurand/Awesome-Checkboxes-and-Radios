@@ -1,0 +1,31 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@font-face {
+    font-family: 'unicons';
+    src: url('fonts/unicons/unicons-thinline.ttf');
+    src: url('fonts/unicons/unicons-line.ttf');
+    src: url('fonts/unicons/unicons-solid.ttf');
+}
+
+
+input.acr{
+    &[type="checkbox"]{
+        @include checkbox-default();
+    }
+
+    &[type="radio"]{
+        @include radio-default();
+    }
+    
+    &.acr-fill{
+        @include fill-default();
+    }
+    
+    &.acr-check{
+        // @include custom-icon-unicons('\e9c3');
+        // @include custom-icon-unicons("\1F46D");
+        // @include custom-icon-unicons("\E9C3");
+        @include custom-icon-unicons($test);
+    }
+}
