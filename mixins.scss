@@ -1,0 +1,69 @@
+@mixin checkbox-default {
+    all: unset;
+    width: $default-size;
+    height: $default-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    box-sizing: border-box;
+    border-radius: $default-border-radius;
+
+    font-size: 100%;
+}
+
+@mixin radio-default {
+    all: unset;
+    width: $default-size;
+    height: $default-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    box-sizing: border-box;
+    border-radius: $default-size / 2;
+
+    font-size: 100%;
+}
+
+@mixin fill-default {
+    background: $white;
+    border: $default-border-width solid $gray-b4;
+
+    &::before{
+        color: transparent;
+        vertical-align: text-top;
+    }
+
+    &:checked{
+        background-color: $blue;
+
+        &::before{
+            color: $white;
+            vertical-align: text-top;
+        }
+    }
+}
+
+@mixin custom-icon-unicons($unicode-icon) {
+
+    font-family: unicons;
+    font-style: normal;
+    
+    &::before{
+        color: $white;
+        vertical-align: text-top;
+        font-family: unicons;
+        content: $unicode-icon;
+    }
+    
+    &:checked{
+        
+        &::before{
+            font-family: unicons;
+            content: $unicode-icon;
+        }
+    }
+}
