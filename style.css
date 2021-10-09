@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'unicons';
+  src: url("fonts/unicons/unicons-thinline.ttf");
+  src: url("fonts/unicons/unicons-line.ttf");
+  src: url("fonts/unicons/unicons-solid.ttf"); }
+input.acr[type="checkbox"] {
+  all: unset;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 100%; }
+input.acr[type="radio"] {
+  all: unset;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  border-radius: 6.5px;
+  font-size: 100%; }
+input.acr.acr-fill {
+  background: #fff;
+  border: 1px solid #B4B4B4; }
+  input.acr.acr-fill::before {
+    color: transparent;
+    vertical-align: text-top; }
+  input.acr.acr-fill:checked {
+    background-color: #007bff; }
+    input.acr.acr-fill:checked::before {
+      color: #fff;
+      vertical-align: text-top; }
+input.acr.acr-check {
+  font-family: unicons;
+  font-style: normal; }
+  input.acr.acr-check::before {
+    color: #fff;
+    vertical-align: text-top;
+    font-family: unicons;
+    content: ""; }
+  input.acr.acr-check:checked::before {
+    font-family: unicons;
+    content: ""; }
+
+/*# sourceMappingURL=style.css.map */
