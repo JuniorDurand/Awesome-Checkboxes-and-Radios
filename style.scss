@@ -22,8 +22,8 @@ input.acr{
     &.acr-fill{
         @include fill-default();
     }
-    
-    @include arc-generate('check', $check);
-    @include arc-generate('angry', $angry);
-    @include arc-generate('check-circle', $check-circle);
+
+    @each $name, $code in $icons {
+        @include arc-generate($name, $code);
+    }
 }
