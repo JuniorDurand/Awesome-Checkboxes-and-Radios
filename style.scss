@@ -22,10 +22,7 @@ input.acr{
         @include fill-default();
     }
     
-    &.acr-check{
-        // @include custom-icon-unicons('\e9c3');
-        // @include custom-icon-unicons("\1F46D");
-        // @include custom-icon-unicons("\E9C3");
-        @include custom-icon-unicons($test);
-    }
+    @include arc-generate('check', $check);
+    @include arc-generate('angry', $angry);
+    @include arc-generate('check-circle', $check-circle);
 }
