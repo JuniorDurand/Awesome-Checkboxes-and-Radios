@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awesome Checkboxes and Radios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, sans-serif;
+        background: #f6f7fb;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(180deg, #f6f7fb 0%, #eef2ff 100%);
+        color: #1f2937;
+      }
+
+      main {
+        width: min(720px, calc(100vw - 32px));
+        background: #fff;
+        border: 1px solid #d8deea;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin: 0 0 24px;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+
+      .group {
+        display: grid;
+        gap: 16px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+      }
+
+      .note {
+        margin-top: 24px;
+        font-size: 0.92rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Demo de Checkboxes e Radios</h1>
+      <p>
+        Abra esta pagina para testar as classes CSS do projeto dentro do
+        Dev Container.
+      </p>
+
+      <section class="group" aria-label="Exemplos">
+        <label class="row">
+          <input class="acr acr-fill acr-md-check" type="checkbox" checked />
+          Checkbox com <code>acr-md-check</code>
+        </label>
+
+        <label class="row">
+          <input class="acr acr-fill acr-md-check-circle" type="checkbox" checked />
+          Checkbox com <code>acr-md-check-circle</code>
+        </label>
+
+        <label class="row">
+          <input class="acr acr-fill" type="radio" name="demo-radio" checked />
+          Radio com <code>acr-fill</code>
+        </label>
+
+        <label class="row">
+          <input class="acr acr-fill" type="radio" name="demo-radio" />
+          Outro radio com <code>acr-fill</code>
+        </label>
+      </section>
+
+      <div class="note">
+        Rode <code>npx serve . -l 3000</code> e acesse <code>http://localhost:3000</code>.
+      </div>
+    </main>
+  </body>
+</html>

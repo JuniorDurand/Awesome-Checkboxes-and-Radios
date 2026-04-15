@@ -1,29 +1,66 @@
-@import "./assets/variables";
-@import "./assets/mixins";
-@import "./assets/icons";
+@use "./assets/variables" as *;
+@use "./assets/mixins" as *;
+@use "./assets/icons" as *;
 
 @font-face {
-    font-family: 'unicons';
-    src: url('fonts/unicons/unicons-thinline.ttf');
-    src: url('fonts/unicons/unicons-line.ttf');
-    src: url('fonts/unicons/unicons-solid.ttf');
+    font-family: 'Material Symbols Outlined';
+    src: url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v284/kJF1BvYX7BgnkSrUwT8COo2hW0n3R.woff2') format('woff2');
+    font-display: swap;
 }
 
+input.acr {
+    all: unset;
+    width: $default-size;
+    height: $default-size;
+    display: inline-grid;
+    place-content: center;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: $white;
+    border: $default-border-width solid $gray-b4;
+    border-radius: $default-border-radius;
+    font-size: 100%;
+    color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+}
 
-input.acr{
-    &[type="checkbox"]{
-        @include checkbox-default();
-    }
+input.acr:focus-visible {
+    outline: 2px solid rgba($blue, 0.4);
+    outline-offset: 2px;
+}
 
-    &[type="radio"]{
-        @include radio-default();
-    }
-    
-    &.acr-fill{
-        @include fill-default();
-    }
+input.acr[type="radio"] {
+    border-radius: $default-size * 0.5;
+}
 
-    @each $name, $code in $icons {
-        @include arc-generate($name, $code);
-    }
+input.acr::before {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1;
+    color: transparent;
+    content: "";
+}
+
+input.acr.acr-fill {
+    background: $white;
+}
+
+input.acr.acr-fill:checked {
+    background-color: $blue;
+}
+
+input.acr.acr-fill:checked::before {
+    color: $white;
+}
+
+input.acr.acr-fill::before {
+    vertical-align: text-top;
+}
+
+@each $name, $code in $icons {
+    @include arc-generate($name, $code);
 }
