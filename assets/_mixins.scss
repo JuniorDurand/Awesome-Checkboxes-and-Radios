@@ -1,75 +1,63 @@
+@use "./variables" as *;
+
 @mixin checkbox-default {
     all: unset;
     width: $default-size;
     height: $default-size;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    display: inline-grid;
+    place-content: center;
+    vertical-align: middle;
+    cursor: pointer;
 
     box-sizing: border-box;
+    background: $white;
+    border: $default-border-width solid $gray-b4;
     border-radius: $default-border-radius;
 
     font-size: 100%;
+    color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
 }
 
 @mixin radio-default {
     all: unset;
     width: $default-size;
     height: $default-size;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    display: inline-grid;
+    place-content: center;
+    vertical-align: middle;
+    cursor: pointer;
 
     box-sizing: border-box;
-    border-radius: $default-size / 2;
-
-    font-size: 100%;
-}
-
-@mixin fill-default {
     background: $white;
     border: $default-border-width solid $gray-b4;
+    border-radius: $default-size * 0.5;
 
-    &::before{
-        color: transparent;
-        vertical-align: text-top;
-    }
-
-    &:checked{
-        background-color: $blue;
-
-        &::before{
-            color: $white;
-            vertical-align: text-top;
-        }
-    }
-}
-
-@mixin custom-icon-unicons($unicode-icon) {
-
-    font-family: unicons;
-    font-style: normal;
-    
-    &::before{
-        color: $white;
-        vertical-align: text-top;
-        font-family: unicons;
-        content: $unicode-icon;
-    }
-    
-    &:checked{
-        
-        &::before{
-            font-family: unicons;
-            content: $unicode-icon;
-        }
-    }
+    font-size: 100%;
+    color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
 }
 
 @mixin arc-generate($name, $code) {
-    &.acr-#{$name}{
-        @include custom-icon-unicons($code);
+    input.acr.acr-#{$name}::before {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-size: 12px;
+        line-height: 1;
+        color: transparent;
+        content: $code;
+    }
+
+    input.acr.acr-#{$name}:checked::before {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-size: 12px;
+        line-height: 1;
+        color: $white;
+        content: $code;
     }
 }

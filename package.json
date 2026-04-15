@@ -1,0 +1,16 @@
+{
+  "name": "awesome-checkboxes-and-radios",
+  "private": true,
+  "scripts": {
+    "build:css": "sass style.scss style.css --style=expanded --source-map",
+    "build:css:min": "sass style.scss style-min.css --style=compressed --no-source-map",
+    "watch:css": "sass --watch style.scss:style.css --style=expanded --source-map",
+    "serve": "serve . -l 3000",
+    "dev": "concurrently -k \"npm:watch:css\" \"npm:serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.77.8",
+    "serve": "^14.2.4"
+  }
+}
